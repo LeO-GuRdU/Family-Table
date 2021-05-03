@@ -7,7 +7,7 @@
     <body>
         <div id="container">
         <div id="header">
-            <h2>My Family</h2>
+            <h2>My Family table</h2>
         </div>
         <div id="btn_add">
             <a href="form.php">ADD</a>
