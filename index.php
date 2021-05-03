@@ -26,6 +26,7 @@
                             <th>Age</th>
                             <th>Gender</th>
                             <th>Relationship</th>
+                            <th>Delete</th>
                         </tr>';
                         while($row =mysqli_fetch_array($response)){
                             echo '<tr>
@@ -35,6 +36,7 @@
                             <td>'.$row['Age'].'</td>
                             <td>'.$row['Gender'].'</td>
                             <td>'.$row['Relationship'].'</td>
+                            <td><div id="btn_del"><a href="delete.php?id='.$row['MemberID'].'">Del</a></div></td>
                         </tr>';
                         }
                         echo'</table>';
