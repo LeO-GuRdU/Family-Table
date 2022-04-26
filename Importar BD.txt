@@ -1,0 +1,29 @@
+Datos Importantes: 
+Nombre de la BD en Docker: mysql-server-80
+Comando para ingresar a la consola de docker: docker exec -it mysql-server-80 bash -l
+Comando para ingresar a la consola de MySQL de docker: mysql -p -u root
+Password de MySQL: .sweetpwd.
+
+Pasos a seguir:
+
+1- El archivo a importar es 'script.sql' y está en la raíz del proyecto.
+2- Ejecutar:
+
+	docker cp script.sql mysql-server-80:/tmp  
+	
+	Con ese comando hacemos una copia del archivo a importar en la carpeta virtual
+	donde se va a ejecutar MySQL.
+3- Ejecutar:
+	
+	docker exec -it mysql-server-80  bash -l
+
+	Conectarse al docker de la BD.
+
+4- Ejecutar:
+
+	cd /tmp "Para pararse en la carpeta donde anteriormente pusimos el archivo a importar".
+	mysql -p -u root "Ingresar a la consola de MySQL".
+
+5- Ejecutar:
+		
+		SET autocommit=0;source script.sql; COMMIT;SET autocommit=1;
